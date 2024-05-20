@@ -1,4 +1,6 @@
 # FJ-BE-R2-Svayam-Kapadia-IIIT-Pune
+# FundFlow
+https://fundflow-svayam.netlify.app/
 
 This is a Django-based web application for managing personal finances, allowing users to track their expenses, income, and set up a budget. The application includes features like OAuth integration for Google login and an email notification system for budget overruns.
 
