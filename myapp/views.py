@@ -22,7 +22,7 @@ def register(request):
             return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'registration/index.html', {'form': form})
+    return render(request, 'registration/register.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
