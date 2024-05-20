@@ -3,7 +3,7 @@
 from django.shortcuts import render
 
 def home(request):
-    return render(request, 'index.html')
+    return render(request, 'p.html')
 
 
 # myapp/views.py
@@ -19,10 +19,10 @@ def register(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('profile')
+            return redirect('home')
     else:
         form = UserCreationForm()
-    return render(request, 'registration/register.html', {'form': form})
+    return render(request, 'registration/index.html', {'form': form})
 
 def login_view(request):
     if request.method == 'POST':
