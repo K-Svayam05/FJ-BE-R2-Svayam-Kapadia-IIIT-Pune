@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>FundFlow</title>
+  {% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">
+<script src="{% static 'js/script.js' %}"></script>
+
+</head>
+
+<body>
+  <!-- Navbar -->
+
+  <div class="navbar">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Services</a>
+        <div class="dropdown-content">
+          <a href="#track">Track</a>
+          <a href="#scanReceipt">Receipt Scanner</a>
+          <a href="#accIntegration">Account Information</a>
+        </div>
+      </li>
+      <li><a href="#working">Working</a></li>
+    </ul>
+
+    <img src="logo2.png" alt="Logo" class="logo">
+  </div>
+
+  <!-- Slideshow -->
+  <section id="about">
+
+    <div class="slideshow-container">
+      
+       <h1>FundFlow</h1>
+
+    </div>
+  </section>
+
+  <!-- Finance Tracker -->
+  <section id="track">
+
+    <div class="finance-tracker">
+      <h2>"Finance Tracker"</h2>
+      <!-- Add your finance tracker code here -->
+    </div>
+    <div class="container">
+      <div class="ledger">
+        <h2>Income Expense Tracker</h2>
+        <h4>Your Current Balance</h4>
+        <h1 id="balance">₹ 0.00</h1>
+        <div class="inc-exp-container">
+          <div class="inc">
+            <h4>Income</h4>
+            <p id="inc-amt" class="amt plus">₹ 0.00</p>
+          </div>
+          <div class="exp">
+            <h4>Expense</h4>
+            <p id="exp-amt" class="amt minus">₹ 0.00</p>
+          </div>
+        </div>
+        <form action="#" id="form">
+          <div class="form-control">
+            <label for="category">Category</label>
+            <select name="category" id="category" style="height: 41.6px; width: 300px; margin-left: 15px;">
+              <option value="income">Income</option>
+              <option value="expense">Expense</option>
+            </select>
+          </div>
+          <div class="form-control">
+            <label for="desc">Description</label>
+            <input type="text" name="desc" id="desc" placeholder="Enter Description (Case Sensitive)" />
+          </div>
+
+          <div class="form-control">
+            <label for="amount">Amount</label>
+            <input type="number" name="amount" id="amount" placeholder="Enter Amount" />
+          </div>
+          <button class="btn" type="submit">Add Transaction</button>
+        </form>
+      </div>
+      <div class="transaction">
+        <h3>Transaction Details</h3>
+        <ul class="trans" id="trans">
+          <li class="exp">
+            Insurance
+            <span>-1500</span>
+            <button class="btn-del">x</button>
+          </li>
+          <li class="inc">
+            Salary
+            <span>35000</span>
+            <button class="btn-del">x</button>
+          </li>
+          <li class="exp">
+            Food
+            <span>-350</span>
+            <button class="btn-del">x</button>
+          </li>
+          <li class="exp">
+            Insurance
+            <span>-1500</span>
+            <button class="btn-del">x</button>
+            <button class="btn-edit">Edit</button>
+          </li>
+
+        </ul>
+      </div>
+      <div class="spending-pattern">
+        <h3>Spending Pattern</h3>
+        <canvas id="spending-chart"></canvas>
+
+        <a onclick="location.reload();">GetChart</a>
+      </div>
+    </div>
+    <section id="scanReceipt">
+
+      <div class="container1">
+        <div class="receipt-scanner">
+          <h3>Receipt Scanner</h3>
+          <input type="file" id="receipt-input" accept="image/*">
+          <div class="receipt-preview">
+            <button id="scan-button">Scan Receipt</button>
+            <div id="scanned-result">
+              <h4>Scanned Result:</h4>
+              <p id="scanned-text"></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+    <section id="accIntegration">
+
+      <div class="container2">
+
+        <div class="account-form">
+          <h3>Add Banking or Credit Card Account</h3>
+          <form id="account-form">
+            <div class="form-control">
+              <label for="account-type">Account Type</label>
+              <select name="account-type" id="account-type">
+                <option value="banking">Banking</option>
+                <option value="credit-card">Credit Card</option>
+              </select>
+            </div>
+            <div class="form-control">
+              <label for="account-number">Account Number</label>
+              <input type="text" name="account-number" id="account-number" required>
+            </div>
+            <div class="form-control">
+              <label for="account-name">Account Name</label>
+              <input type="text" name="account-name" id="account-name" required>
+            </div>
+            <div class="form-control">
+              <label for="account-bank">Bank Name</label>
+              <input type="text" name="account-bank" id="account-bank" required>
+            </div>
+            <button type="submit">Save Account</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </section>
+  <section id="working">
+
+    <div class="Work">
+      <h2>How can Finance Expense tracker help you?</h2>
+      <p>
+        Unlock financial mastery with a finance expense tracker – your ultimate ally for navigating personal and business finances. This cutting-edge tool delivers real-time insights and comprehensive reports, empowering you to take command of your financial destiny.
+        Effortlessly capture every transaction, categorize expenses with precision, and unveil hidden spending patterns. Armed with this invaluable knowledge, you'll make informed decisions, identify cost-saving opportunities, and craft budgets that truly work for you.
+        Many finance expense trackers boast advanced features like automatic expense syncing, receipt scanning, and banking integration, streamlining the process and embracing convenience.
+        Embrace the finance expense tracker, your trusted companion towards financial freedom. Gain control, achieve your monetary goals, and unlock a world of possibilities through mastering financial management.
+      </p>
+    </div>
+    <div class="image-gallery">
+      <h2>How To Use the Website!</h2>
+      <div id="image">
+        <img src="delete.jpg" alt="Image 1">
+        <img src="edit1.jpg" alt="Image 2">
+        <img src="edit2.jpg" alt="Image 3">
+        <img src="get chart1.jpg" alt="Image 4">
+        <img src="get chart2.jpg" alt="Image 5">
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>&copy; 2024 FundFlow. All rights reserved. </p>
+    <div class="social-icons">
+      <a href="https://www.facebook.com/yourprofile"><img src="facebook.png" alt="Facebook"></a>
+      <a href="https://www.twitter.com/yourprofile"><img src="twitter.png" alt="Twitter"></a>
+      <a href="https://www.instagram.com/yourprofile"><img src="instagram.png" alt="Instagram"></a>
+      <a href="https://api.whatsapp.com/send?phone=123456789"><img src="whatsapp.png" alt="WhatsApp"></a>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.2.2/dist/tesseract.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    var slideIndex = 0;
+    var slideshowInterval; // Global variable to store the interval ID
+
+    function showSlides() {
+      var slides = document.getElementsByClassName("slideshow-container")[0].getElementsByTagName("img");
+      for (var i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+        slides[i].classList.remove("active");
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {
+        slideIndex = 1;
+      }
+      slides[slideIndex - 1].style.display = "block";
+      slides[slideIndex - 1].classList.add("active");
+    }
+    function startSlideshow() {
+      slideshowInterval = setInterval(function () {
+        showSlides();
+      }, 1500); // Change slide every 1.5 seconds
+    }
+
+    function stopSlideshow() {
+      clearInterval(slideshowInterval); // Clear the interval to stop the slideshow
+    }
+
+    function highlightSlide(index) {
+      var slides = document.getElementsByClassName("slideshow-container")[0].getElementsByTagName("img");
+      slides[index - 1].classList.add("highlight");
+    }
+
+    function removeHighlight(index) {
+      var slides = document.getElementsByClassName("slideshow-container")[0].getElementsByTagName("img");
+      slides[index - 1].classList.remove("highlight");
+    }
+
+    // Start the slideshow initially
+    startSlideshow();
+  </script>
+
+</body>
+
+</html>
